@@ -1,0 +1,15 @@
+-Eliminar partición Linux
+
+-CMD como administrador
+
+-diskpart
+--sel disk 1 (disco donde este el dual boot)
+--sel part 1 (partición EFI)
+--assign letter z:
+--exit
+
+-bcdboot c:\windows /s z: /f all
+
+-bcdedit.exe /enum firmware (para ver discos entre {})
+
+-bcdedit.exe /delete {#########}
